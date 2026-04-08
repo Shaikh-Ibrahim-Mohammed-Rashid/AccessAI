@@ -182,8 +182,8 @@ AccessAI/
 
 ### 1) Clone and move into project
 ```bash
-git clone <your-repo-url>
-cd "Terna Tech Week"
+git clone https://github.com/Shaikh-Ibrahim-Mohammed-Rashid/AccessAI.git
+cd "AccessAI"
 ```
 
 ### 2) Backend setup
@@ -269,11 +269,9 @@ Add your screenshots here before submission:
 ---
 
 ## Team Details
-- Team Name: `<Your Team Name>`
+- Team Name: `The DOMinators`
 - Members:
-  - `<Member 1 - Role>`
-  - `<Member 2 - Role>`
-  - `<Member 3 - Role>`
+  - `Shaikh Ibrahim - Lead`
 
 ---
 
