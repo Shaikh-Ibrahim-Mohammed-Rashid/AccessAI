@@ -1,279 +1,444 @@
-# AccessAI - The Web for Everyone
+<div align="center">
+
+# ♿ AccessAI — The Web for Everyone
+
 ### Turning every website into an inclusive, voice-first, AI-guided experience.
 
----
+<br/>
 
-## Project Overview
-AccessAI is an AI-powered accessibility web platform that helps people with disabilities navigate websites more easily using voice commands, intelligent guidance, and adaptive UI behavior.
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)](https://openai.com/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 
-It is designed for hackathon impact: real user problems, polished product experience, and practical deployment architecture.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/Shaikh-Ibrahim-Mohammed-Rashid/AccessAI/pulls)
+[![Hackathon](https://img.shields.io/badge/Built%20for-Hackathon-blueviolet?style=flat-square)]()
+[![Status](https://img.shields.io/badge/Status-Active-success?style=flat-square)]()
 
----
+<br/>
 
-## Problem Statement
-Digital products are still difficult to use for many people, especially:
-- Users with vision impairment who struggle to scan page structures and interactive controls.
-- Users with motor impairments who find mouse-heavy navigation difficult.
-- Elderly users who need larger text, simpler layouts, and guided interactions.
-- Users with cognitive load challenges who benefit from step-by-step support.
+> **AccessAI** is an AI-powered accessibility platform that empowers people with disabilities to navigate any website using voice commands, intelligent guidance, and adaptive UI — no special hardware required.
 
-Common accessibility problems include:
-- Complex interfaces with unclear action flow.
-- Lack of voice-driven control.
-- Forms that are hard to understand and complete.
-- No contextual, real-time assistance.
+<br/>
 
----
+[🚀 Live Demo](#-demo) · [📖 Docs](#-installation--setup) · [🐛 Report Bug](https://github.com/Shaikh-Ibrahim-Mohammed-Rashid/AccessAI/issues) · [✨ Request Feature](https://github.com/Shaikh-Ibrahim-Mohammed-Rashid/AccessAI/issues)
 
-## Solution
-AccessAI combines frontend accessibility tools with AI assistance:
-- Voice Navigation: control page flow hands-free.
-- Read Page (TTS): read full page content aloud with browser speech synthesis.
-- AI Assistant (Chat + Voice): conversational guidance to explain content, help with forms, and suggest next actions.
-- Smart Vision Mode: detects important elements (buttons, forms, nav links) and overlays actionable guidance.
-- Adaptive Accessibility Mode: observes user behavior (slow typing, repeated errors) and adjusts UI for better usability.
+</div>
 
 ---
 
-## Features
-### 1) Voice Navigation System
-- Browser speech recognition via Web Speech API.
-- Supported commands include:
-  - Open dashboard
-  - Scroll down / Scroll up
-  - Read this page
-  - Stop reading
-  - Toggle contrast
-  - Help me login
-- Intent mapping triggers UI actions directly.
+## 📋 Table of Contents
 
-### 2) Text-to-Speech (TTS)
-- Read Page button reads visible page content aloud.
-- Uses backend `/tts` preprocessing + browser speech synthesis playback.
-- Supports English and Hindi voice language switching.
-
-### 3) AI Assistant (Chat + Voice)
-- Floating assistant panel fixed at screen corner.
-- Accepts typed and voice input.
-- Capabilities:
-  - Explain page context
-  - Step-by-step task guidance
-  - Form-help responses like "Help me login"
-- Backend endpoint: `/chat`.
-
-### 4) Smart Vision Mode
-- Analyzes live DOM for key elements.
-- Highlights interactive targets with overlays and tooltip hints.
-- Demonstrates guided usability for forms/navigation-heavy pages.
-
-### 5) Adaptive Accessibility Mode
-- Detects behavior patterns:
-  - Slow typing speed
-  - Repeated login/form errors
-- Dynamically adapts UI:
-  - Suggest voice-first workflow
-  - Switch to simplified visual mode
-  - Maintain high legibility and larger controls
-
-### 6) Extra Accessibility Features
-- Multi-language support: English + Hindi.
-- Keyboard shortcuts:
-  - `Alt + R`: Read page
-  - `Alt + V`: Voice navigation
-  - `Alt + C`: Contrast mode
-- Onboarding tutorial popup for first interaction.
-- High contrast mode (black/yellow) for strong visibility.
+- [🌍 The Problem](#-the-problem)
+- [💡 The Solution](#-the-solution)
+- [✨ Features](#-features)
+- [🎬 Demo](#-demo)
+- [📸 Screenshots](#-screenshots)
+- [🏗️ Architecture & Workflow](#️-architecture--workflow)
+- [🛠️ Tech Stack](#️-tech-stack)
+- [📁 Project Structure](#-project-structure)
+- [⚙️ Installation & Setup](#️-installation--setup)
+- [🚀 Usage Guide](#-usage-guide)
+- [🔌 API Reference](#-api-reference)
+- [🔮 Future Enhancements](#-future-enhancements)
+- [👥 Team](#-team)
+- [📄 License](#-license)
 
 ---
 
-## Unique Selling Points
-- Real-time AI + accessibility fusion (not static accessibility toggles only).
-- Voice-first interaction model for hands-free web control.
-- Smart Vision overlays that convert visual clutter into guided actions.
-- Adaptive behavior loop that personalizes accessibility automatically.
-- Hackathon-ready architecture with clear path to production APIs.
+## 🌍 The Problem
+
+Over **1 billion people** live with some form of disability — yet the modern web is largely built without them in mind.
+
+| User Group | Common Barrier |
+|---|---|
+| 👁️ Vision Impairment | Cannot scan page layouts, buttons, or interactive controls |
+| 🖐️ Motor Impairment | Mouse-heavy navigation is painful or impossible |
+| 👴 Elderly Users | Need larger text, guided flow, and simpler layouts |
+| 🧠 Cognitive Challenges | Overwhelmed by complex interfaces without step-by-step support |
+
+Current accessibility solutions are mostly static toggles — they don't adapt, don't converse, and don't guide. **AccessAI changes that.**
 
 ---
 
-## Tech Stack
-### Frontend
-- React.js (Vite)
-- Tailwind CSS
-- Framer Motion
-- Axios
-- Browser Web Speech API (Speech-to-Text + Text-to-Speech)
+## 💡 The Solution
 
-### Backend
-- Flask
-- Flask-CORS
-- python-dotenv
-- OpenAI Python SDK (fallback responses if API key not present)
+AccessAI is a full-stack web platform that layers AI intelligence directly on top of any web interface. It combines:
 
-### AI
-- OpenAI Chat Completion API (`gpt-4o-mini` by default)
+- 🎙️ **Real-time voice navigation** for hands-free control
+- 🔊 **Text-to-speech** that reads any page aloud on demand
+- 🤖 **Conversational AI assistant** for contextual, step-by-step guidance
+- 👁️ **Smart Vision overlays** that spotlight interactive elements
+- 🔄 **Adaptive UI** that automatically adjusts based on observed user behavior
+
+This isn't just compliance — it's genuine digital inclusion.
 
 ---
 
-## How It Works
-1. User opens AccessAI and sees onboarding guidance.
-2. User enables voice navigation and speaks commands.
-3. Frontend speech recognition maps commands to actions.
-4. For full-page reading, frontend sends text to `/tts` and plays processed chunks via SpeechSynthesis.
-5. User asks questions in assistant panel (typed or voice).
-6. Frontend sends message + page context summary to `/chat`.
-7. Backend uses OpenAI (or fallback engine) to return clear guidance.
-8. Smart Vision mode scans DOM and overlays highlighted guidance boxes.
-9. Adaptive mode monitors behavior and automatically suggests easier interaction paths.
+## ✨ Features
+
+### 🎙️ 1. Voice Navigation System
+Hands-free browsing via the browser's Web Speech API. Speak naturally and the page responds.
+
+**Supported commands include:**
+| Command | Action |
+|---|---|
+| `"Open dashboard"` | Navigate to dashboard view |
+| `"Scroll down"` / `"Scroll up"` | Page scrolling |
+| `"Read this page"` | Triggers full TTS read |
+| `"Stop reading"` | Halts speech playback |
+| `"Toggle contrast"` | Switches high-contrast mode |
+| `"Help me login"` | Launches AI login assistant |
 
 ---
 
-## Demo Flow (For Judges)
-1. Start on landing screen and enable accessibility controls.
-2. Say: **"Open dashboard"** to demonstrate voice navigation.
-3. Say: **"Scroll down"** to show command-based movement.
-4. Click **Read Page** (or say "Read this page") to begin TTS.
-5. Open AI assistant and ask: **"Help me login"**.
-6. Enable Smart Vision and show login button/form highlighting.
-7. Enter invalid login details twice to trigger adaptive assistance.
-8. Switch language to Hindi and repeat voice/TTS behavior.
-9. Toggle high contrast mode to demonstrate visual accessibility.
+### 🔊 2. Text-to-Speech (TTS)
+One click or voice command reads your entire page aloud using browser-native speech synthesis, pre-processed by the backend for clean chunked delivery. Supports **English and Hindi**.
 
 ---
 
-## Scalability & Future Scope
-- Integrate with public websites using browser extensions.
-- Deploy as accessibility layer for government portals.
-- Integrate with education platforms for inclusive e-learning.
-- Add banking-friendly secure guided form completion.
-- Expand multilingual support to regional languages.
-- Add OCR + image captioning for visual accessibility.
-- Add user profiles for personalized accessibility preferences.
+### 🤖 3. AI Assistant (Chat + Voice)
+A floating panel powered by GPT-4o-mini that accepts both typed and spoken queries. It can:
+- Explain what's on the current page
+- Walk users through multi-step tasks
+- Respond to requests like *"Help me fill out this form"*
 
 ---
 
-## Project Structure
-```text
+### 👁️ 4. Smart Vision Mode
+Scans the live DOM, identifies key interactive elements (buttons, forms, nav links), and overlays visual guidance tooltips — turning cluttered UIs into guided experiences.
+
+---
+
+### 🔄 5. Adaptive Accessibility Mode
+Monitors user behavior in real time:
+- Detects **slow typing** or **repeated login errors**
+- Automatically **suggests voice-first workflows**
+- Switches to **simplified visual mode** with larger, high-legibility controls
+
+---
+
+### ♿ 6. Additional Accessibility Features
+- 🌐 **Multi-language support** — English & Hindi
+- ⌨️ **Keyboard shortcuts:**
+  - `Alt + R` — Read page
+  - `Alt + V` — Voice navigation
+  - `Alt + C` — Contrast mode
+- 🟡 **High contrast mode** (black/yellow) for maximum visibility
+- 🎓 **Onboarding tutorial** popup for first-time users
+
+---
+
+## 🎬 Demo
+
+> 📹 **Video Demo:** [Watch on YouTube](#) 
+
+**Recommended demo flow for judges:**
+
+1. Load the app and observe the onboarding tutorial
+2. Say **"Open dashboard"** — voice navigation fires
+3. Say **"Scroll down"** — command-based scroll
+4. Click **Read Page** or say **"Read this page"** — TTS begins
+5. Open the AI assistant and type **"Help me login"**
+6. Enable **Smart Vision** — watch form elements get highlighted
+7. Enter invalid credentials twice — **Adaptive Mode** activates
+8. Switch to **Hindi** — repeat TTS and voice commands
+9. Toggle **High Contrast Mode**
+
+---
+
+## 📸 Screenshots
+
+
+| Home / Landing | AI Assistant |
+|---|---|
+| ![Home](docs/screenshots/home.png) | ![Assistant](docs/screenshots/assistant.png) |
+
+| High Contrast Mode |
+|---|
+| ![Contrast](docs/screenshots/contrast-mode.png) |
+
+---
+
+## 🏗️ Architecture & Workflow
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                      User (Browser)                     │
+│                                                         │
+│  ┌───────────────┐    ┌──────────────────────────────┐  │
+│  │  Voice Input  │───▶│   Web Speech API (STT)       │  │
+│  └───────────────┘    └─────────────┬────────────────┘  │
+│                                     │                   │
+│                            Intent Mapping               │
+│                                     │                   │
+│              ┌──────────────────────▼───────────────┐   │
+│              │         React Frontend (Vite)        │   │
+│              │  - Smart Vision DOM Scanner          │   │
+│              │  - Adaptive Behavior Monitor         │   │
+│              │  - TTS Playback (SpeechSynthesis)    │   │
+│              └────────┬──────────────┬──────────────┘   │
+└───────────────────────│──────────────│──────────────────┘
+                        │              │
+              POST /chat│    POST /tts │
+                        ▼              ▼
+              ┌──────────────────────────────┐
+              │       Flask Backend          │
+              │  - Chat endpoint             │
+              │  - TTS preprocessing         │
+              │  - OpenAI SDK integration    │
+              └──────────────┬───────────────┘
+                             │
+                             ▼
+                  ┌─────────────────────┐
+                  │   OpenAI API        │
+                  │   (gpt-4o-mini)     │
+                  └─────────────────────┘
+```
+
+**Request Lifecycle:**
+1. User speaks a command or types a query
+2. Frontend maps speech → intent → UI action
+3. For AI queries, page context + message sent to `/chat`
+4. For TTS, page text sent to `/tts` for chunking, then played back
+5. Smart Vision scans DOM and renders overlay guidance
+6. Adaptive mode watches behavior and adjusts the UI automatically
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| **Frontend Framework** | React.js (Vite) |
+| **Styling** | Tailwind CSS |
+| **Animation** | Framer Motion |
+| **HTTP Client** | Axios |
+| **Speech (STT + TTS)** | Browser Web Speech API |
+| **Backend** | Flask + Flask-CORS |
+| **AI Model** | OpenAI `gpt-4o-mini` |
+| **Environment Config** | python-dotenv |
+
+---
+
+## 📁 Project Structure
+
+```
 AccessAI/
-  backend/
-    app.py
-    requirements.txt
-    .env.example
-  frontend/
-    src/
-      components/
-      hooks/
-      utils/
-      App.jsx
-      index.css
-      main.jsx
-    .env.example
-    tailwind.config.js
-    postcss.config.js
-    package.json
-  README.md
+├── backend/
+│   ├── app.py                  # Flask server — /chat and /tts endpoints
+│   ├── requirements.txt
+│   └── .env.example
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/         # UI components (Assistant, SmartVision, etc.)
+│   │   ├── hooks/              # Custom React hooks
+│   │   ├── utils/              # Intent mapping, helpers
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   └── main.jsx
+│   ├── .env.example
+│   ├── tailwind.config.js
+│   ├── postcss.config.js
+│   └── package.json
+│
+├── docs/
+│   └── screenshots/
+└── README.md
 ```
 
 ---
 
-## Installation & Setup
-### Prerequisites
-- Node.js 20+
-- Python 3.10+
+## ⚙️ Installation & Setup
 
-### 1) Clone and move into project
+### Prerequisites
+
+- **Node.js** v20+
+- **Python** 3.10+
+- An **OpenAI API key** ([get one here](https://platform.openai.com/api-keys))
+
+---
+
+### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/Shaikh-Ibrahim-Mohammed-Rashid/AccessAI.git
-cd "AccessAI"
+cd AccessAI
 ```
 
-### 2) Backend setup
+---
+
+### 2. Backend Setup
+
 ```bash
 cd backend
+
+# Create and activate virtual environment
 python -m venv ../.venv
-../.venv/Scripts/activate
+../.venv/Scripts/activate        # Windows
+# source ../.venv/bin/activate   # macOS / Linux
+
+# Install dependencies
 pip install -r requirements.txt
-copy .env.example .env
+
+# Configure environment
+copy .env.example .env           # Windows
+# cp .env.example .env           # macOS / Linux
 ```
 
-Set your API key in `.env`:
+Edit `.env` and add your credentials:
+
 ```env
 OPENAI_API_KEY=your_openai_api_key_here
 OPENAI_MODEL=gpt-4o-mini
 FLASK_PORT=5000
 ```
 
-Run backend:
+Start the backend:
+
 ```bash
 python app.py
 ```
 
-### 3) Frontend setup
-Open a new terminal:
-```bash
-cd frontend
-npm install
-copy .env.example .env
-npm run dev
-```
-
-Frontend runs at `http://localhost:5173` and calls backend at `http://localhost:5000`.
+> Backend runs at `http://localhost:5000`
 
 ---
 
-## API Endpoints
+### 3. Frontend Setup
+
+Open a **new terminal tab/window:**
+
+```bash
+cd frontend
+
+npm install
+
+copy .env.example .env           # Windows
+# cp .env.example .env           # macOS / Linux
+
+npm run dev
+```
+
+> Frontend runs at `http://localhost:5173`
+
+---
+
+## 🚀 Usage Guide
+
+Once both servers are running, open `http://localhost:5173` in your browser.
+
+| Feature | How to Activate |
+|---|---|
+| 🎙️ Voice Navigation | Click **"Enable Voice"** or press `Alt + V`, then speak a command |
+| 🔊 Read Page | Click **"Read Page"** or press `Alt + R` |
+| 🤖 AI Assistant | Click the floating assistant icon → type or speak your question |
+| 👁️ Smart Vision | Toggle **"Smart Vision"** in the toolbar |
+| 🟡 High Contrast | Click **"Contrast"** or press `Alt + C` |
+| 🌐 Switch Language | Use the language selector for English / Hindi |
+
+> **Tip:** On first load, an onboarding tutorial walks you through all major features.
+
+---
+
+## 🔌 API Reference
+
 ### `POST /chat`
-Request:
+
+Sends a user message with optional page context to get AI-powered guidance.
+
+**Request:**
 ```json
 {
   "message": "Help me login",
   "history": [],
-  "pageContext": "Title: ..."
+  "pageContext": "Title: Login Page | Elements: email input, password input, submit button"
 }
 ```
 
-Response:
+**Response:**
 ```json
 {
-  "reply": "Step-by-step login guidance..."
+  "reply": "Sure! Here's how to log in step-by-step: 1. Click the Email field..."
 }
 ```
+
+---
 
 ### `POST /tts`
-Request:
+
+Preprocesses page content into speech-ready chunks for browser TTS playback.
+
+**Request:**
 ```json
 {
-  "text": "Page content to read",
+  "text": "Welcome to AccessAI. This platform helps you navigate...",
   "lang": "en-US"
 }
 ```
 
-Response:
+**Response:**
 ```json
 {
-  "text": "...",
+  "text": "Welcome to AccessAI...",
   "lang": "en-US",
-  "chunks": ["...", "..."],
+  "chunks": ["Welcome to AccessAI.", "This platform helps you navigate..."],
   "note": "Client should use Web Speech API for playback."
 }
 ```
 
 ---
 
-## Screenshots
-Add your screenshots here before submission:
-- `docs/screenshots/home.png`
-- `docs/screenshots/assistant.png`
-- `docs/screenshots/smart-vision.png`
-- `docs/screenshots/contrast-mode.png`
+## 🔮 Future Enhancements
+
+- 🌐 **Browser Extension** — deploy AccessAI as an overlay on any public website
+- 🏛️ **Government Portal Integration** — partner with civic tech for inclusive e-governance
+- 🎓 **Education Platform Layer** — inclusive e-learning support for students with disabilities
+- 🏦 **Secure Form Guidance** — banking-friendly, step-by-step secure form completion
+- 🗣️ **Regional Language Expansion** — support for Hindi, Tamil, Bengali, and more
+- 📷 **OCR + Image Captioning** — make visual content accessible through description
+- 👤 **User Profiles** — save personalized accessibility preferences across sessions
 
 ---
 
-## Team Details
-- Team Name: `The DOMinators`
-- Members:
-  - `Shaikh Ibrahim - Lead`
+## 👥 Team
+
+<table>
+  <tr>
+    <td align="center">
+      <b>Shaikh Ibrahim Mohammed Rashid</b><br/>
+      🏆 Lead Developer<br/>
+      <a href="https://github.com/Shaikh-Ibrahim-Mohammed-Rashid">@Shaikh-Ibrahim-Mohammed-Rashid</a>
+    </td>
+  </tr>
+</table>
+
+**Team Name:** `The DOMinators`
 
 ---
 
-## Impact Statement
-AccessAI makes web interaction more inclusive by combining AI intelligence with practical accessibility actions. It does not only increase compliance, it improves independence, dignity, and digital participation for everyone.
+## 🌟 Impact Statement
+
+> *"Accessibility is not a feature — it is a foundation."*
+
+AccessAI makes the web genuinely usable for people who are currently excluded from it. By fusing real-time AI with practical accessibility actions — voice, vision, adaptation — it doesn't just satisfy compliance checklists. It restores **independence**, **dignity**, and **digital participation** to users who deserve it most.
+
+Whether deployed as a standalone platform or extended as a browser layer, AccessAI has a clear path to real-world impact at scale.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+
+Made with ❤️ by **The DOMinators**
+
+⭐ Star this repo if you believe the web should work for everyone.
+
+</div>
