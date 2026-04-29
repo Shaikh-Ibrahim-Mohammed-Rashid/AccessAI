@@ -1,6 +1,6 @@
 <div align="center">
 
-# ♿ AccessaI — The Web for Everyone
+# ♿ AccessAI — The Web for Everyone
 
 ### Turning every website into an inclusive, voice-first, AI-guided experience.
 
